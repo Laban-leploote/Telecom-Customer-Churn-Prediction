@@ -52,13 +52,13 @@ Handling Imbalance: Since only 14.5% of customers churned, we used stratificatio
 Scaling: Applied StandardScaler to ensure features like "minutes" (high range) didn't overshadow "service calls" (low range).
 
 ## EDA 
-Service Friction: Churn probability spikes dramatically after the 3rd customer service call. This is the primary indicator of a "breaking point."
+Churn probability spikes dramatically after the 3rd customer service call. This is the primary indicator of a "breaking point."
 
-The Usage Paradox: High-usage "Power Users" (specifically high daytime minutes) churn at a higher rate, likely seeking better unlimited deals from competitors.
+High-usage "Power Users" (specifically high daytime minutes) churn at a higher rate, likely seeking better unlimited deals from competitors.
 
-Plan Mismatch: Customers with an International Plan are significantly more likely to leave, suggesting a perceived lack of value in that specific product.
+Customers with an International Plan are significantly more likely to leave, suggesting a perceived lack of value in that specific product.
 
-Regional Variance: High-churn "hotspots" identified in states like NJ, CA, and TX.
+High-churn "hotspots" identified in states like NJ, CA, and TX.
 
 ## MODELLING
 We reframed the business problem as a binary classification task. While we tested several algorithms, the Random Forest was chosen for its ability to handle non-linear relationships and provide clear feature importance.
@@ -69,8 +69,11 @@ Final Choice: Tuned Random Forest (Optimized via GridSearchCV for F1-Score).
 
 ## RESULTS
 We tuned the models to find the optimal balance between catching churners (Recall) and ensuring we don't waste money on loyal customers (Precision).
-Model,Test Accuracy,Precision,Recall,F1-Score,ROC-AUC
-Tuned Random Forest,92.7%,80.0%,66.0%,0.72,0.89
+
+Model,             Test Accuracy,  Precision,   Recall,  F-Score,    ROC-AUC
+Tuned Random Forest  ,92.7%,         80.0%,      66.0%,     0.72,       0.89
+
+
 Key Finding: Our final model catches 66% of all churners with 80% precision. This means that out of every 5 customers we flag as "at risk," 4 are truly planning to leave.
 
 ## LIMITATIONS
@@ -90,5 +93,6 @@ International Plan Audit: Review the pricing of the International Plan; consider
 Threshold Deployment: * High Risk (Prob > 0.7): Direct phone call or high-value discount.
 
 Medium Risk (Prob 0.4 - 0.7): Targeted email/SMS with a "Thank you" offer.
+
 
 
