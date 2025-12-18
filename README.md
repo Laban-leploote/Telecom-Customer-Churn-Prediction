@@ -1,4 +1,5 @@
 <img width="600" height="436" alt="image" src="https://github.com/user-attachments/assets/57b02ed5-8834-4104-967c-a90e64de8521" />
+
 Author: Laban
 
 ## TELECOM CUSTOMER CHURN PREDICTION
@@ -89,4 +90,5 @@ International Plan Audit: Review the pricing of the International Plan; consider
 Threshold Deployment: * High Risk (Prob > 0.7): Direct phone call or high-value discount.
 
 Medium Risk (Prob 0.4 - 0.7): Targeted email/SMS with a "Thank you" offer.
+
 
