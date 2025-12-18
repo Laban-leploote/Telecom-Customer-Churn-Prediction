@@ -40,6 +40,8 @@ Insight: The model identifies account length as a key factor. This implies there
 5. Evening & Night Minutes
 Insight: While Day minutes are most critical, Evening and Night usage also rank in the top 10. Churn is rarely caused by one thing; it’s a cumulative shift in behavior.
 
+<img width="966" height="542" alt="image" src="https://github.com/user-attachments/assets/b0063187-082e-4960-aac5-77d3f556c6fa" />
+
 ## DATA PREPARATION
 Feature Selection: Dropped phone number and redundant charge columns to prevent multicollinearity (minutes and charges were perfectly correlated).
 
@@ -70,8 +72,8 @@ Final Choice: Tuned Random Forest (Optimized via GridSearchCV for F1-Score).
 ## RESULTS
 We tuned the models to find the optimal balance between catching churners (Recall) and ensuring we don't waste money on loyal customers (Precision).
 
-Model,             Test Accuracy,  Precision,   Recall,  F-Score,    ROC-AUC
-Tuned Random Forest  ,92.7%,         80.0%,      66.0%,     0.72,       0.89
+<img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/8cc47535-2b79-44c7-b79a-890190e1dc64" />
+
 
 
 Key Finding: Our final model catches 66% of all churners with 80% precision. This means that out of every 5 customers we flag as "at risk," 4 are truly planning to leave.
@@ -93,6 +95,7 @@ International Plan Audit: Review the pricing of the International Plan; consider
 Threshold Deployment: * High Risk (Prob > 0.7): Direct phone call or high-value discount.
 
 Medium Risk (Prob 0.4 - 0.7): Targeted email/SMS with a "Thank you" offer.
+
 
 
 
